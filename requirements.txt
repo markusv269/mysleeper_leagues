@@ -1,2 +1,2 @@
 streamlit
-sleeper_wrapper
+sleeper-api-wrapper
