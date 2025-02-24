@@ -15,5 +15,8 @@ if insert_sleeper_name and insert_year:
     if not user_leagues:
         st.write("Keine Ligen gefunden.")
     else:
+        i = 0
         for league in user_leagues:  # Falls es eine Liste ist
-            st.write(f"{league.get('name')} ({league.get('league_id')})")
+            i += 1
+            st.write(f"{i}. {league.get('name')} ({league.get('league_id')})")
+        st.write(f"{insert_sleeper_name} ist {insert_year} in {i} Ligen aktiv!")
