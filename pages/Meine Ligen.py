@@ -10,6 +10,7 @@ with col2:
 
 if insert_sleeper_name and insert_year:
     user = User(insert_sleeper_name)
+    user_name = user.get_display_name()
     user_leagues = user.get_all_leagues(sport="nfl", season=insert_year)
 
     if not user_leagues:
@@ -19,4 +20,4 @@ if insert_sleeper_name and insert_year:
         for league in user_leagues:  # Falls es eine Liste ist
             i += 1
             st.write(f"{i}. {league.get('name')} ({league.get('league_id')})")
-        st.write(f"**{insert_sleeper_name} ist {insert_year} in {i} Ligen aktiv!**")
+        st.write(f"**{user_name} ist {insert_year} in {i} Ligen aktiv!**")
